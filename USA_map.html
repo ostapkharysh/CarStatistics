@@ -14,7 +14,7 @@
 
 </style>
 <body>
-<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="//d3j  s.org/d3.v3.min.js"></script>
 <script src="//d3js.org/topojson.v1.min.js"></script>
 <script>
 
@@ -31,10 +31,11 @@
     d3.json(url, function(error, topology) {
         if (error) throw error;
 
-        //console.log("topojson", topology);
+        console.log("topojson", topology);
         var geojson = topojson.feature(topology, topology.objects.counties);
-        //console.log("geojson", geojson);
+        console.log("geojson", geojson);
 
+        console.log( "features", geojson.features);
         svg.selectAll("path")
             .data(geojson.features)
             .enter().append("path")
