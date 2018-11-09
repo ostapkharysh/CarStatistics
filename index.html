@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    path {
+        fill: #ccc;
+        stroke: #fff;
+        stroke-width: 0.5px;
+    }
+
+    path:hover {
+        fill: red;
+    }
+
+
+</style>
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script>
+    //<script src="d3.v4.js">
+    //<script src="topojson.v1.min.js"
+    // <script src="d3-geo.v1.min.js"
+    var width = 960,
+        height = 500;
+
+    var path = d3.geo.path();
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+    // "https://gist.githubusercontent.com/ostapkharysh/3dab6a416ad365e0ca50d53730ccf2c3/raw/cad9cd18d6c5e62d5aab9b69c3be72e13c4b6251/ukr_map.json"
+
+    var url = "gadm36_UKR.json";
+    d3.json(url, function (error, topology) {
+        if (error) throw error;
+
+        console.log("topojson", topology);
+        var geojson = topojson.feature(topology, topology.objects);
+        console.log("geojson", geojson);
+
+        svg.selectAll("path")
+            .data(geojson.features)
+            .enter().append("path")
+            .attr("d", path);
+    });
+
+</script>
