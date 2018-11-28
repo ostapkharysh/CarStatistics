@@ -3,6 +3,8 @@
 
 <style>
 
+
+
     path {
         fill: #ccc;
         stroke: #fff;
@@ -12,6 +14,10 @@
     path:hover {
         fill: #16a78d;
 
+    }
+    .background {
+        fill: #eee;
+        pointer-events: all;
     }
 
 </style>
@@ -37,34 +43,64 @@
     var data ='gadm36_UKR.json';
 
 
-    d3.json(data, function (topology) {
+    var color = d3.scaleLinear()
+        .domain([1, 20])
+        .clamp(true)
+        .range(['#fff', '#409A99']);
+
+
+
+    d3.json(data, function(topology) {
         var geojson = topojson.feature(topology, topology.objects.gadm36_UKR_1);
 
         var center = d3.geoCentroid(geojson);
-        var scale = 2800;
-        var offset = [width / 2, height / 2];
+        var scale = 2300;
+        var offset = [width / 3.2, height / 2];
 
         var projection = d3.geoMercator().scale(scale).center(center).translate(offset);
+
+        color.domain([0, d3.max(geojson.features, nameLength)]); // Update color scale domain based on data
 
         console.log("center", center);
         console.log("geojson features", geojson.features);
 
+        svg.append('rect')
+            .attr('class', 'background')
+            .attr('width', width)
+            .attr('height', height+50);
+        //.on('click', clicked);
 
         var group = svg.selectAll("g")
             .data(geojson.features)
             .enter().append("g");
 
-        console.log("scale", width / 2 / Math.PI);
-        console.log("translate",height/2 );
-        console.log(width, height);
-
         var path = d3.geoPath().projection(projection);
 
+
         var areas = group.append("path")
-            .attr("d", path)
+            .attr("d", path).
+            style('fill', fillFn);
+
+
 
 
     });
+
+    // Get province name
+    function nameFn(d){
+        console.log("PROPERTIES",d.properties);
+        return d && d.properties ? d.properties.NAME_1 : null;
+    }
+
+    // Get province color
+    function fillFn(d){
+        return color(nameLength(d));
+    }
+
+    function nameLength(d){
+        var n = nameFn(d);
+        return n ? n.length : 0;
+    }
 
 
 
