@@ -1,0 +1,15 @@
+
+path {
+    fill: #ccc;
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+path:hover {
+    fill: #16a78d;
+
+}
+.background {
+    fill: #6495ed !important;
+    pointer-events: all;
+}
