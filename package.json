@@ -20,7 +20,8 @@
     "@types/polylabel": "^1.0.5",
     "d3": "^5.7.0",
     "polylabel": "^1.0.2",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "topojson": "^3.0.2"
   },
   "devDependencies": {
     "webpack": "^4.28.3",

@@ -43,21 +43,19 @@
 <script>
 
     //var polylabel = require(['@types/polylabel']);
-    function custMap() {
+    function custMap(data) {
 
     var margin = {top: 20, left: 20, right: 20, bottom: 20};
 
     var width = window.innerWidth - margin.left-margin.right,
         height = window.innerHeight - margin.top - margin.bottom;
 
-    var data ='gadm36_UKR.json';
-
     var svg = d3.select("body").append("svg")
         .attr("width", width)
         .attr("height", height);
 
 
-    d3.json(data, function (topology) {
+    d3.json(data).then(function (topology) {
         var geojson = topojson.feature(topology, topology.objects.gadm36_UKR_1);
         var center = d3.geoCentroid(geojson);
         var scale = 2300;
@@ -103,9 +101,7 @@
     })
     }
 
-    custMap();
-
-
+    custMap('gadm36_UKR.json');
 
 
 </script>

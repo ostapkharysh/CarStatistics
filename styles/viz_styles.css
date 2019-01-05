@@ -13,3 +13,7 @@ path:hover {
     fill: #6495ed !important;
     pointer-events: all;
 }
+
+.group{
+    fill: orange;
+}
