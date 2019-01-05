@@ -1,56 +1,15 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-
-<style>
-
-    path {
-        fill: #ccc;
-        stroke: #fff;
-        stroke-width: 1px;
-    }
-
-    path:hover {
-        fill: #16a78d;
-
-    }
-    .background {
-        fill: #eee;
-        pointer-events: all;
-    }
+import * as d3 from 'd3'
 
 
 
+console.log("IN index.js");
 
-
-</style>
-
-
-<html>
-<head>
-    <title> vechicle statistics</title>
-
-</head>
-
-<h1 align="center">Vechicle statistics</h1>
-
-</html>
-
-<body>
-
-<script src="//d3js.org/d3.v4.js"></script>
-<script src="//d3js.org/topojson.v1.js"></script>
-
-<script>
-
-    //var polylabel = require(['@types/polylabel']);
-    function custMap() {
-
+function MyMap(data) {
+    console.log("IN MyMap");
     var margin = {top: 20, left: 20, right: 20, bottom: 20};
 
     var width = window.innerWidth - margin.left-margin.right,
         height = window.innerHeight - margin.top - margin.bottom;
-
-    var data ='gadm36_UKR.json';
 
     var svg = d3.select("body").append("svg")
         .attr("width", width)
@@ -100,12 +59,8 @@
             .append("text")
             .text ( ({properties}) => properties.NAME_1);
 
-    })
-    }
+        console.log(data)
+    });
+}
 
-    custMap();
-
-
-
-
-</script>
+MyMap('gadm36_UKR.json');
