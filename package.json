@@ -1,0 +1,30 @@
+{
+  "name": "mvs_viz",
+  "version": "1.0.0",
+  "main": "require.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ostapkharysh/CarStatistics.git"
+  },
+  "keywords": [],
+  "author": "Ostap Kharysh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ostapkharysh/CarStatistics/issues"
+  },
+  "homepage": "https://github.com/ostapkharysh/CarStatistics#readme",
+  "dependencies": {
+    "@types/polylabel": "^1.0.5",
+    "d3": "^5.7.0",
+    "polylabel": "^1.0.2",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
+  },
+  "description": ""
+}
