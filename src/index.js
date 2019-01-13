@@ -1,13 +1,21 @@
 import * as d3 from 'd3'
 import * as topojson from "topojson";
-import * as polylabel from "polylabel"
 
 
-console.log("IN index.js");
+function placeRegion(regionCenter) {
+
+}
+
+
+
+
+
+d3.select("body").transition()
+    .style("background-color", "#bbfefe");
 
 function MyMap(data) {
-    console.log(data);
-    console.log("IN MyMap");
+    //console.log(data);
+    //console.log("IN MyMap");
     var margin = {top: 20, left: 20, right: 20, bottom: 20};
 
     var width = window.innerWidth - margin.left-margin.right,
@@ -17,14 +25,12 @@ function MyMap(data) {
         .attr("width", width)
         .attr("height", height);
 
-    var regCenters = [];
-
 
     d3.json(data).then(function (topology) {
         var geojson = topojson.feature(topology, topology.objects.gadm36_UKR_1);
         var center = d3.geoCentroid(geojson);
-        var scale = 2300;
-        var offset = [width / 3.1, height / 2.25];
+        var scale = 2600;
+        var offset = [width / 2.9, height / 2.2];
 
         var projection = d3.geoMercator().scale(scale).center(center).translate(offset);
 
@@ -41,43 +47,35 @@ function MyMap(data) {
 
         var areas = group.append("path")
             .attr("d", path)
+            //.attr("stroke", "blue")
+            //
+            .style('stroke', '#d8d6aa')
+            .style('fill',"#146520")
             .on("click", function (d) {
-                d3.selectAll('path').style('fill',null);
-                d3.select(this).style("fill","#16a78d")
-
-            })
-            // output names of admin entities
+                d3.selectAll('path').style('stroke', '#d8d6aa').style('fill',"#146520");
+                d3.select(this).style("fill","#18a830").text( ({properties}) => properties.NAME_1);
 
 
-            .attr("transform", function(d) {
-
-                //console.log("d", d.geometry.coordinates);
-                var p = polylabel(d.geometry.coordinates, 1.0);
-                regCenters.push(p);
-                //console.log("p", p);
-                //console.log("d", d.properties.NAME_1)
             });
 
-        //areas.selectAll().forEach(function (el) {
-         //   console.log(el)
-        //})
-
-
-        //console.log("group", group);
-        //group.selectAll().forEach(function (el){
-        //   console.log(el);
-        //});
 
         group
             .append("text")
             .text ( ({properties}) => properties.NAME_1)
+            //.attr("stroke", "#f14142")
+            .attr("stroke-width", 0.3)
+            .style("font-size", "13px")
             .attr("transform", function(d) {
-                console.log(d);
-                return "translate(" + path.centroid(d) + ")"; });
+                //console.log(d.properties.NAME_1.length/2);
+                var position = [path.centroid(d)[0]-(d.properties.NAME_1.length+10), path.centroid(d)[1]];
+                console.log(path.centroid(d));
+                console.log(position);
+                return "translate(" + position + ")"; })
     });
-
-    console.log(regCenters)
 }
+
+d3.selectAll('h2').style('color', 'white');
+d3.selectAll('h2').style('background-color', 'grey');
 
 
 
