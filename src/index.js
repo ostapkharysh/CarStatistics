@@ -2,8 +2,43 @@ import * as d3 from 'd3'
 import * as topojson from "topojson";
 
 
-d3.select("body").transition()
-    .style("background-color", "#bbfefe");
+
+
+var CSVconverter = function (d) {
+    return {
+        Adm_entity: d.region,
+        Purchase: parseInt(d.purchase),
+        AvgCapacity: parseFloat(d.avg_capacity),
+        PopFuel: d.pop_type,
+        PopVechicle: d.pop_vechicle,
+        AvgProdYear: d.avg_prod_year
+    };
+};
+
+
+
+function paintMap(region){
+    if ((region.properties.NAME_1 === "Crimea") || (region.properties.NAME_1 === "Sevastopol'")){
+        return '#6e6a6e'
+    }
+    else{
+        return '#158222'
+    }
+
+}
+
+function chooseRegion(d) {
+    d3.selectAll('path').style('fill', paintMap);
+    if ((d.properties.NAME_1 !== "Crimea") && (d.properties.NAME_1 !== "Sevastopol'")){
+        d3.select(this).style("fill","#0bc203");
+    }
+    else{
+        d3.select(this).style("fill","#b0acb0");
+    }
+
+
+}
+
 
 function MyMap(mapData, regionInfo) {
 
@@ -17,11 +52,19 @@ function MyMap(mapData, regionInfo) {
         .attr("height", height);
 
 
+    d3.csv(regionInfo, CSVconverter, function (error, AdmInfo) {
+
+    });
+
+
+
     d3.json(mapData).then(function (topology) {
+
+
         var geojson = topojson.feature(topology, topology.objects.gadm36_UKR_1);
         var center = d3.geoCentroid(geojson);
         var scale = 2600;
-        var offset = [width / 2.9, height / 2.2];
+        var offset = [width / 2.9, height / 2.3];
 
         var projection = d3.geoMercator().scale(scale).center(center).translate(offset);
 
@@ -33,53 +76,30 @@ function MyMap(mapData, regionInfo) {
 
         group.append("path")
             .attr("d", path)
-            .style('stroke', '#d8d6aa')
+            //.style('stroke', '#d8d6aa')
             .style('fill', paintMap)             // 'steelblue'
-            .on("click", chooseRegion);
+            .on("mouseover", chooseRegion);
 
 
         group
             .append("text")
             .text ( ({properties}) => properties.NAME_1)
             .attr("pointer-events", "none")
-            .attr("stroke-width", 0.5)
+            .attr("stroke-width", 0.7)
             .style("font-size", "13px")
             .attr("transform", function(d) {
                 var position = [path.centroid(d)[0]-(d.properties.NAME_1.length+10), path.centroid(d)[1]];
                 return "translate(" + position + ")"; })
     });
 
-    function paintMap(region){
-        if ((region.properties.NAME_1 === "Crimea") || (region.properties.NAME_1 === "Sevastopol'")){
-            return '#6e6a6e'
-        }
-        else{
-            return '#158222'
-        }
-
-    }
-
-    function chooseRegion(d) {
-            d3.selectAll('path').style('fill', paintMap);
-            if ((d.properties.NAME_1 !== "Crimea") && (d.properties.NAME_1 !== "Sevastopol'")){
-                d3.select(this).style("fill","#0bc203");
-            }
-            else{
-                d3.select(this).style("fill","#959195");
-            }
-
-
-    }
-
 }
 
 
-
-d3.selectAll('h2').style('color', 'white');
-d3.selectAll('h2').style('background-color', 'grey');
-
+//replaced with css
+//d3.selectAll('h1').style('color', 'white').style('background-color', 'grey');
 
 
 
 
-MyMap('/gadm36_UKR.json', '/2017_auto.json');
+
+MyMap('data/gadm36_UKR.json', 'data/2017_avg_auto.csv');

@@ -1,4 +1,14 @@
 
+
+
+svg path{
+   stroke: #d8d6aa;
+}
+
+svg body {
+
+background-color: #dbfff8;
+}
 svg text {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -7,4 +17,9 @@ svg text {
 }
 svg text::selection {
     background: none;
+}
+
+h1 {
+    color: white;
+    background-color: grey;
 }
