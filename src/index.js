@@ -45,17 +45,13 @@ function MyMap(data) {
 
         //console.log("path", path);
 
-        var areas = group.append("path")
+        group.append("path")
             .attr("d", path)
-            //.attr("stroke", "blue")
-            //
             .style('stroke', '#d8d6aa')
             .style('fill',"#146520")
             .on("click", function (d) {
                 d3.selectAll('path').style('stroke', '#d8d6aa').style('fill',"#146520");
-                d3.select(this).style("fill","#18a830").text( ({properties}) => properties.NAME_1);
-
-
+                d3.select(this).style("fill","#18a830");
             });
 
 
@@ -66,16 +62,28 @@ function MyMap(data) {
             .attr("stroke-width", 0.3)
             .style("font-size", "13px")
             .attr("transform", function(d) {
-                //console.log(d.properties.NAME_1.length/2);
                 var position = [path.centroid(d)[0]-(d.properties.NAME_1.length+10), path.centroid(d)[1]];
-                console.log(path.centroid(d));
-                console.log(position);
+                return "translate(" + position + ")"; })
+            .attr("transform", function(d) {
+                var position = [path.centroid(d)[0]-(d.properties.NAME_1.length+10), path.centroid(d)[1]];
                 return "translate(" + position + ")"; })
     });
 }
 
+
+function Info(){
+    var width = window.innerWidth - margin.left-margin.right,
+        height = window.innerHeight - margin.top - margin.bottom;
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+}
+
 d3.selectAll('h2').style('color', 'white');
 d3.selectAll('h2').style('background-color', 'grey');
+
+
 
 
 
