@@ -1,19 +1,10 @@
 
-path {
-    fill: #ccc;
-    stroke: #fff;
-    stroke-width: 1px;
+svg text {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
-path:hover {
-    fill: #16a78d;
-
-}
-.background {
-    fill: #6495ed !important;
-    pointer-events: all;
-}
-
-.group{
-    fill: orange;
+svg text::selection {
+    background: none;
 }

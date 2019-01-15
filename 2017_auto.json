@@ -1,0 +1,218 @@
+[
+  {
+    "": 0,
+    "region": "Zaporizhzhya",
+    "purchase": 52814,
+    "avg_capacity": 2.01,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2004
+  },
+  {
+    "": 1,
+    "region": "Volyn’",
+    "purchase": 33604,
+    "avg_capacity": 2.72,
+    "pop_type": "ДИЗЕЛЬНЕ ПАЛИВО",
+    "pop_vechicle": "VOLKSWAGEN  PASSAT",
+    "avg_prod_year": 2005
+  },
+  {
+    "": 2,
+    "region": "Ternopil’",
+    "purchase": 28817,
+    "avg_capacity": 2.37,
+    "pop_type": "ДИЗЕЛЬНЕ ПАЛИВО",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2004
+  },
+  {
+    "": 3,
+    "region": "Poltava",
+    "purchase": 43880,
+    "avg_capacity": 2.05,
+    "pop_type": "БЕНЗИН АБО ГАЗ",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2003
+  },
+  {
+    "": 4,
+    "region": "Transcarpathia",
+    "purchase": 21132,
+    "avg_capacity": 2.73,
+    "pop_type": "ДИЗЕЛЬНЕ ПАЛИВО",
+    "pop_vechicle": "SKODA  OCTAVIA",
+    "avg_prod_year": 2006
+  },
+  {
+    "": 5,
+    "region": "Cherkasy",
+    "purchase": 36448,
+    "avg_capacity": 2.2,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2003
+  },
+  {
+    "": 6,
+    "region": "Kirovohrad",
+    "purchase": 24913,
+    "avg_capacity": 2.19,
+    "pop_type": "БЕНЗИН АБО ГАЗ",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2002
+  },
+  {
+    "": 7,
+    "region": "Donets’k",
+    "purchase": 47630,
+    "avg_capacity": 1.85,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "ЗАЗ-DAEWOO  LANOS",
+    "avg_prod_year": 2003
+  },
+  {
+    "": 8,
+    "region": "L’viv",
+    "purchase": 68615,
+    "avg_capacity": 2.29,
+    "pop_type": "ДИЗЕЛЬНЕ ПАЛИВО",
+    "pop_vechicle": "VOLKSWAGEN  PASSAT",
+    "avg_prod_year": 2005
+  },
+  {
+    "": 9,
+    "region": "Kmel’nyts’kyy",
+    "purchase": 38496,
+    "avg_capacity": 2.36,
+    "pop_type": "ДИЗЕЛЬНЕ ПАЛИВО",
+    "pop_vechicle": "VOLKSWAGEN  PASSAT",
+    "avg_prod_year": 2003
+  },
+  {
+    "": 10,
+    "region": "Rivne",
+    "purchase": 37549,
+    "avg_capacity": 2.3,
+    "pop_type": "ДИЗЕЛЬНЕ ПАЛИВО",
+    "pop_vechicle": "VOLKSWAGEN  PASSAT",
+    "avg_prod_year": 2004
+  },
+  {
+    "": 11,
+    "region": "Odessa",
+    "purchase": 80025,
+    "avg_capacity": 2.43,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "TOYOTA  CAMRY",
+    "avg_prod_year": 2004
+  },
+  {
+    "": 12,
+    "region": "Kharkiv",
+    "purchase": 75645,
+    "avg_capacity": 2.16,
+    "pop_type": "БЕНЗИН АБО ГАЗ",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2005
+  },
+  {
+    "": 13,
+    "region": "Ivano-Frankivs’k",
+    "purchase": 32655,
+    "avg_capacity": 2.16,
+    "pop_type": "ДИЗЕЛЬНЕ ПАЛИВО",
+    "pop_vechicle": "RENAULT  MEGANE",
+    "avg_prod_year": 2005
+  },
+  {
+    "": 14,
+    "region": "Dnipropetrovs’k",
+    "purchase": 92005,
+    "avg_capacity": 2.22,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2005
+  },
+  {
+    "": 15,
+    "region": "Kherson",
+    "purchase": 23148,
+    "avg_capacity": 2.16,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2004
+  },
+  {
+    "": 16,
+    "region": "Mukolayiv",
+    "purchase": 30796,
+    "avg_capacity": 2.54,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2003
+  },
+  {
+    "": 17,
+    "region": "Vinnytsya",
+    "purchase": 47502,
+    "avg_capacity": 2.42,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "VOLKSWAGEN  PASSAT",
+    "avg_prod_year": 2004
+  },
+  {
+    "": 18,
+    "region": "Kiev",
+    "purchase": 244113,
+    "avg_capacity": 2.23,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2007
+  },
+  {
+    "": 19,
+    "region": "Zhytomyr",
+    "purchase": 32355,
+    "avg_capacity": 2.18,
+    "pop_type": "БЕНЗИН АБО ГАЗ",
+    "pop_vechicle": "VOLKSWAGEN  PASSAT",
+    "avg_prod_year": 2004
+  },
+  {
+    "": 20,
+    "region": "Chernihiv",
+    "purchase": 24622,
+    "avg_capacity": 2.16,
+    "pop_type": "БЕНЗИН АБО ГАЗ",
+    "pop_vechicle": "DAEWOO  LANOS",
+    "avg_prod_year": 2003
+  },
+  {
+    "": 21,
+    "region": "Chernivtsi",
+    "purchase": 22666,
+    "avg_capacity": 2.93,
+    "pop_type": "ДИЗЕЛЬНЕ ПАЛИВО",
+    "pop_vechicle": "VOLKSWAGEN  TRANSPORTER",
+    "avg_prod_year": 2004
+  },
+  {
+    "": 22,
+    "region": "Sumy",
+    "purchase": 27768,
+    "avg_capacity": 1.99,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "ВАЗ  21099",
+    "avg_prod_year": 2003
+  },
+  {
+    "": 23,
+    "region": "Luhans’k",
+    "purchase": 16048,
+    "avg_capacity": 2.02,
+    "pop_type": "БЕНЗИН",
+    "pop_vechicle": "ВАЗ  21063",
+    "avg_prod_year": 2001
+  }
+]
